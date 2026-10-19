@@ -53,6 +53,49 @@ python3 scripts/package_skills.py --only nano-banana
 
 The builder validates all selected directories before writing archives. Each `dist/<name>.skill` is a ZIP file containing only that skill's top-level directory. A `.skill` suffix does not guarantee support in every client; the directory is the portable source package. The standard-library builder also verifies byte-for-byte archive contents and emits SHA-256 sums. Nothing is installed automatically.
 
+## CI and tagged releases
+
+Pull requests and pushes to `main` run the release-tooling tests, validate every skill, build each `.skill` archive and verify its SHA-256 checksum. The resulting packages are also saved as a GitHub Actions build artefact for 14 days.
+
+The release workflow runs when a collection-wide version tag is pushed. Once these workflow files are committed and pushed, create a release from the intended commit:
+
+```sh
+git tag -a v1.0.0 -m "Release v1.0.0"
+git push origin v1.0.0
+```
+
+Tags must use `vMAJOR.MINOR.PATCH`, optionally followed by a SemVer prerelease suffix such as `v1.1.0-rc.1`. Leading zeroes in version numbers and numeric prerelease identifiers are rejected. Build metadata suffixes (`+...`) aren't accepted. Prerelease tags are automatically marked as prereleases. Version numbers refer to this skill collection, independently of the model versions in directory names.
+
+Every successful release has these **19 downloadable assets**:
+
+- All 15 skills attached individually as `<skill-name>.skill`, each containing its own directory and embedded references.
+- `text-2-image-skills-<tag>.zip`, containing all 15 source skill directories plus the README, licence and catalogue.
+- `catalog.json` and `release.json`, recording the model catalogue, version tag and source commit.
+- `SHA256SUMS`, covering every other attached asset.
+
+The workflow builds the tagged source, tests and verifies its assets, creates a draft with automatically generated release notes, uploads the individual files, then publishes. It uses the repository's built-in `GITHUB_TOKEN`; no personal access token or additional secret is required. Write permission is confined to the publishing job. Third-party action references are pinned to verified commit SHAs.
+
+If an upload fails, the release remains a draft. Rerun the failed workflow to replace the draft assets and publish it. An already published release is never overwritten by the script; use a new version tag for changes. The Actions page also provides a manual **Tagged release** run with an existing tag, useful for retrying a missed trigger. The tag must already exist remotely and contain the release scripts.
+
+To build the same assets locally without publishing:
+
+```sh
+python3 -m unittest discover -s tests -v
+python3 scripts/build_release.py --tag v1.0.0
+```
+
+The builder creates `dist/release/` and refuses to overwrite an existing output directory. For another local preview, pass a fresh path using `--output`. Generated assets remain ignored by Git. Finder `.DS_Store` files are ignored by both Git and the packager.
+
+Verify a downloaded release by placing the files together and running:
+
+```sh
+sha256sum --check SHA256SUMS
+```
+
+On macOS, `shasum -a 256 --check SHA256SUMS` is an alternative.
+
+The workflow follows GitHub's [draft-first publication guidance](https://docs.github.com/en/code-security/concepts/supply-chain-security/immutable-releases) and uses the documented [release creation](https://cli.github.com/manual/gh_release_create) and [publication](https://cli.github.com/manual/gh_release_edit) commands. It doesn't change the repository's release-immutability or tag-protection settings.
+
 ## Important identity distinctions
 
 - Nano Banana, Pro and 2 map to Gemini 2.5 Flash Image, Gemini 3 Pro Image and Gemini 3.1 Flash Image respectively. Later Nano Banana releases aren't substituted.

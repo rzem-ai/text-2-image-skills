@@ -61,6 +61,8 @@ def validate(entry):
             fail(f'{name}: symlinks are not portable: {path.relative_to(directory)}')
         if not path.is_file():
             continue
+        if path.name == '.DS_Store':
+            continue
         if path.suffix not in {'.md', '.yaml'}:
             fail(f'{name}: unexpected package file: {path.name}')
         files.append(path)
@@ -86,9 +88,9 @@ def validate(entry):
     return directory, files
 
 
-def build(directory, files):
-    output = ROOT / 'dist'
-    output.mkdir(exist_ok=True)
+def build(directory, files, output=None):
+    output = Path(output) if output is not None else ROOT / 'dist'
+    output.mkdir(parents=True, exist_ok=True)
     destination = output / f'{directory.name}.skill'
     # Write then verify a temporary archive before publishing it over an old one.
     with tempfile.TemporaryDirectory(prefix='.package-', dir=output) as temporary:
@@ -110,11 +112,8 @@ def build(directory, files):
     return destination
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--check', action='store_true', help='Validate without creating archives')
-    parser.add_argument('--only', help='Validate/package a single directory from catalog.json')
-    args = parser.parse_args()
+def load_catalog():
+    """Read the catalog and check that it matches the independently shipped skills."""
     catalog = json.loads((ROOT / 'catalog.json').read_text())
     entries = catalog['skills']
     names = [entry['directory'] for entry in entries]
@@ -123,6 +122,17 @@ def main():
     discovered = {p.parent.name for p in ROOT.glob('*/SKILL.md')}
     if discovered != set(names):
         fail('Catalog does not match skill directories')
+    return catalog
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--check', action='store_true', help='Validate without creating archives')
+    parser.add_argument('--only', help='Validate/package a single directory from catalog.json')
+    args = parser.parse_args()
+    catalog = load_catalog()
+    entries = catalog['skills']
+    names = [entry['directory'] for entry in entries]
     if args.only:
         entries = [entry for entry in entries if entry['directory'] == args.only]
         if not entries:
