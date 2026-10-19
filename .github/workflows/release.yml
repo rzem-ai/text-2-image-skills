@@ -46,6 +46,17 @@ jobs:
       - name: Test release tooling
         run: python -m unittest discover -s tests -v
 
+      - name: Set up Node.js for compatibility checks
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Verify skills CLI compatibility
+        run: |
+          npm ci --ignore-scripts
+          npm run test:skills
+
       - name: Build release assets from the tagged commit
         env:
           RELEASE_TAG: ${{ steps.version.outputs.tag }}

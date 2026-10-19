@@ -1,6 +1,10 @@
 # macOS Finder metadata
 .DS_Store
 
+# Development-only skills CLI compatibility tooling
+node_modules/
+npm-debug.log*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

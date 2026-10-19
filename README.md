@@ -4,6 +4,50 @@ Fifteen independently packageable skills for writing, refining and troubleshooti
 
 Reference documentation checked on **2026-10-19**. Technical facts are scoped to the named model/version. Prompt examples and repair advice are original recommendations, not claims of measured model performance.
 
+## Install with skills.sh
+
+This repository follows the [Agent Skills format](https://agentskills.io/specification) and works with the [skills CLI](https://github.com/vercel-labs/skills). Each model directory is discovered as a separate skill; its embedded references are installed with it. No npm publication, repository-level skill manifest or directory rearrangement is required.
+
+Run the installer from the project where you want to use the skills. The current CLI requires Node.js 22.20 or later; Node isn't required to read or use the installed prompt guidance.
+
+Choose skills and target agents interactively:
+
+```sh
+npx skills add rzem-ai/text-2-image-skills
+```
+
+List the available skills without installing:
+
+```sh
+npx skills add rzem-ai/text-2-image-skills --list
+```
+
+Install one skill for Codex, Claude Code or Cursor:
+
+```sh
+npx skills add rzem-ai/text-2-image-skills --skill nano-banana --agent codex --yes
+npx skills add rzem-ai/text-2-image-skills --skill nano-banana --agent claude-code --yes
+npx skills add rzem-ai/text-2-image-skills --skill nano-banana --agent cursor --yes
+```
+
+Install the entire collection for selected agents:
+
+```sh
+npx skills add rzem-ai/text-2-image-skills --skill '*' --agent codex claude-code cursor --yes
+```
+
+Project installation is the default. Add `--global` for a user-wide installation, or `--copy` to request copies instead of the default shared-directory/symlink layout. Use any skill directory name from the table below with `--skill`.
+
+For a specific tagged release, use the full GitHub tree URL with the tag in place of the branch:
+
+```sh
+npx skills add https://github.com/rzem-ai/text-2-image-skills/tree/v1.0.0 --skill nano-banana --agent codex --yes
+```
+
+Replace `v1.0.0` with an existing tag. CLI installs read the Git repository; individual `.skill` downloads remain available separately as GitHub Release assets. A release archive isn't needed for normal repository installation.
+
+According to the [skills.sh FAQ](https://skills.sh/docs/faq), directory/leaderboard listings are driven by installation telemetry. Compatibility doesn't itself register a listing or guarantee indexing. Set `DISABLE_TELEMETRY=1` if you want to opt out; this repository's compatibility tests always do so.
+
 ## Packages
 
 | Requested model | Skill directory | Identity and scope |
@@ -55,7 +99,7 @@ The builder validates all selected directories before writing archives. Each `di
 
 ## CI and tagged releases
 
-Pull requests and pushes to `main` run the release-tooling tests, validate every skill, build each `.skill` archive and verify its SHA-256 checksum. The resulting packages are also saved as a GitHub Actions build artefact for 14 days.
+Pull requests and pushes to `main` run the release-tooling tests, validate every skill, build each `.skill` archive and verify its SHA-256 checksum. A separate job uses the pinned skills CLI to discover all 15 skills, install them for Codex, Claude Code and Cursor in temporary projects, and compare the installed files to the source. The resulting packages are also saved as a GitHub Actions build artefact for 14 days. Tagged releases run the same CLI compatibility check before building release assets.
 
 The release workflow runs when a collection-wide version tag is pushed. Once these workflow files are committed and pushed, create a release from the intended commit:
 
@@ -95,6 +139,19 @@ sha256sum --check SHA256SUMS
 On macOS, `shasum -a 256 --check SHA256SUMS` is an alternative.
 
 The workflow follows GitHub's [draft-first publication guidance](https://docs.github.com/en/code-security/concepts/supply-chain-security/immutable-releases) and uses the documented [release creation](https://cli.github.com/manual/gh_release_create) and [publication](https://cli.github.com/manual/gh_release_edit) commands. It doesn't change the repository's release-immutability or tag-protection settings.
+
+## Test installer compatibility locally
+
+The npm manifest and lockfile are development tooling only. They don't make the skill packages depend on Node.js or npm.
+
+```sh
+npm ci --ignore-scripts
+npm run test:skills
+```
+
+The test uses `skills@1.7.4`, disables telemetry, and checks full-collection copy installation plus a selected-skill installation using the default layout. Every installed entry point, embedded reference and agent metadata file must match its source. Installs are project-scoped inside temporary directories and removed afterwards.
+
+The top-level model folders are intentional. Don't add an umbrella `SKILL.md` at the repository root: normal CLI discovery can treat that as a single skill and stop before finding the individual packages. The compatibility job catches this regression. See the CLI's [creation and discovery documentation](https://github.com/vercel-labs/skills/blob/main/docs/creating-skills.md).
 
 ## Important identity distinctions
 

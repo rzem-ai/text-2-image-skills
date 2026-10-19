@@ -1,0 +1,11 @@
+{
+  "name": "text-2-image-skills-compatibility",
+  "private": true,
+  "description": "Development-only compatibility checks for the skills.sh CLI",
+  "scripts": {
+    "test:skills": "python3 scripts/check_skills_cli.py"
+  },
+  "devDependencies": {
+    "skills": "1.7.4"
+  }
+}
