@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "reference_date": "2026-10-19",
+  "scope": "Prompt writing and refinement only; no image generation execution.",
+  "skills": [
+    {
+      "directory": "nano-banana",
+      "display_name": "Nano Banana",
+      "model_identity": "Google Gemini 2.5 Flash Image (`gemini-2.5-flash-image`)",
+      "archive": "dist/nano-banana.skill"
+    },
+    {
+      "directory": "nano-banana-pro",
+      "display_name": "Nano Banana Pro",
+      "model_identity": "Google Gemini 3 Pro Image (`gemini-3-pro-image`)",
+      "archive": "dist/nano-banana-pro.skill"
+    },
+    {
+      "directory": "nano-banana-2",
+      "display_name": "Nano Banana 2",
+      "model_identity": "Google Gemini 3.1 Flash Image (`gemini-3.1-flash-image`)",
+      "archive": "dist/nano-banana-2.skill"
+    },
+    {
+      "directory": "gpt-image-2",
+      "display_name": "GPT Image 2",
+      "model_identity": "OpenAI GPT Image 2 (`gpt-image-2`)",
+      "archive": "dist/gpt-image-2.skill"
+    },
+    {
+      "directory": "gpt-image-2-5",
+      "display_name": "GPT Image 2.5",
+      "model_identity": "OpenAI GPT Image 2.5 Flare (`gpt-image-2.5-flare`) or Sunburst (`gpt-image-2.5-sunburst`)",
+      "archive": "dist/gpt-image-2-5.skill"
+    },
+    {
+      "directory": "flux-1-dev",
+      "display_name": "FLUX.1 Dev",
+      "model_identity": "Black Forest Labs FLUX.1 [dev] (`black-forest-labs/FLUX.1-dev`)",
+      "archive": "dist/flux-1-dev.skill"
+    },
+    {
+      "directory": "flux-1-pro",
+      "display_name": "FLUX.1 Pro",
+      "model_identity": "Black Forest Labs original FLUX.1 [pro] (legacy hosted model)",
+      "archive": "dist/flux-1-pro.skill"
+    },
+    {
+      "directory": "flux-2-dev",
+      "display_name": "FLUX.2 Dev",
+      "model_identity": "Black Forest Labs FLUX.2 [dev] (`black-forest-labs/FLUX.2-dev`)",
+      "archive": "dist/flux-2-dev.skill"
+    },
+    {
+      "directory": "flux-2-pro",
+      "display_name": "FLUX.2 Pro",
+      "model_identity": "Black Forest Labs FLUX.2 [pro] (`flux-2-pro`)",
+      "archive": "dist/flux-2-pro.skill"
+    },
+    {
+      "directory": "flux-2-klein-9b",
+      "display_name": "FLUX.2 Klein 9B",
+      "model_identity": "Black Forest Labs distilled FLUX.2 [klein] 9B (`black-forest-labs/FLUX.2-klein-9B`)",
+      "archive": "dist/flux-2-klein-9b.skill"
+    },
+    {
+      "directory": "sdxl",
+      "display_name": "SDXL",
+      "model_identity": "Stability AI Stable Diffusion XL 1.0 base (`stabilityai/stable-diffusion-xl-base-1.0`)",
+      "archive": "dist/sdxl.skill"
+    },
+    {
+      "directory": "juggernaut-xl",
+      "display_name": "Juggernaut XL",
+      "model_identity": "RunDiffusion Juggernaut XL, an SDXL fine-tune family; v9 is the documented baseline here",
+      "archive": "dist/juggernaut-xl.skill"
+    },
+    {
+      "directory": "pony-diffusion-xl",
+      "display_name": "Pony Diffusion XL",
+      "model_identity": "PurpleSmartAI/AstraliteHeart Pony Diffusion V6 XL; use the V6 checkpoint, not V6-1.5 or Turbo merges",
+      "archive": "dist/pony-diffusion-xl.skill"
+    },
+    {
+      "directory": "qwen-image-2-1",
+      "display_name": "Qwen Image 2.1",
+      "model_identity": "Qwen-Image-2.1 (`Qwen/Qwen-Image-2.1`); hosted Pro/Turbo variants have separate contracts",
+      "archive": "dist/qwen-image-2-1.skill"
+    },
+    {
+      "directory": "qwen-image-3",
+      "display_name": "Qwen Image 3",
+      "model_identity": "Qwen-Image-3.0: hosted `qwen-image-3.0` and `qwen-image-3.0-pro`",
+      "archive": "dist/qwen-image-3.skill"
+    }
+  ]
+}

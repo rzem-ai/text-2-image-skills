@@ -1,0 +1,3 @@
+interface:
+  display_name: "Qwen Image 2.1 Prompts"
+  short_description: "Write and refine Qwen Image 2.1 image prompts"
