@@ -56,7 +56,8 @@ def build_release(tag, commit, output):
             'source_commit': commit,
             'reference_date': catalog['reference_date'],
             'skill_count': len(validated),
-            'skills': [{'name': entry['directory'], 'asset': entry['directory'] + '.skill'}
+            'skills': [{'name': entry['directory'], 'asset': entry['directory'] + '.skill',
+                        'reference_date': entry.get('reference_date', catalog['reference_date'])}
                        for entry in catalog['skills']],
         }
         (stage / 'release.json').write_text(json.dumps(metadata, indent=2) + '\n')

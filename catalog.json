@@ -92,6 +92,20 @@
       "display_name": "Qwen Image 3",
       "model_identity": "Qwen-Image-3.0: hosted `qwen-image-3.0` and `qwen-image-3.0-pro`",
       "archive": "dist/qwen-image-3.skill"
+    },
+    {
+      "directory": "moss-image",
+      "display_name": "MOSS Image",
+      "model_identity": "OpenMOSS MOSS-Image family: `OpenMOSS-Team/MOSS-Image-Base` and `OpenMOSS-Team/MOSS-Image-SFT`",
+      "archive": "dist/moss-image.skill",
+      "reference_date": "2026-10-22"
+    },
+    {
+      "directory": "flux-3-image-klein",
+      "display_name": "FLUX 3 Image Klein",
+      "model_identity": "Black Forest Labs distilled `black-forest-labs/flux-3-image-klein`; Base and the PUP rewriter are separate models",
+      "archive": "dist/flux-3-image-klein.skill",
+      "reference_date": "2026-10-22"
     }
   ]
 }

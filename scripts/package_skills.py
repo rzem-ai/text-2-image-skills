@@ -117,8 +117,8 @@ def load_catalog():
     catalog = json.loads((ROOT / 'catalog.json').read_text())
     entries = catalog['skills']
     names = [entry['directory'] for entry in entries]
-    if len(names) != len(set(names)) or len(names) != 15:
-        fail('Catalog must contain exactly 15 unique model skill directories')
+    if not names or len(names) != len(set(names)):
+        fail('Catalog must contain at least one skill and unique model skill directories')
     discovered = {p.parent.name for p in ROOT.glob('*/SKILL.md')}
     if discovered != set(names):
         fail('Catalog does not match skill directories')

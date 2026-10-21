@@ -1,8 +1,8 @@
 # Image prompt skills
 
-Fifteen independently packageable skills for writing, refining and troubleshooting text-to-image prompts and image-to-image briefs. They contain embedded reference notes and original prompt examples. They do not run image generation, install models or call provider APIs.
+Seventeen independently packageable skills for writing, refining and troubleshooting text-to-image prompts and image-to-image briefs. They contain embedded reference notes and original prompt examples. They do not run image generation, install models or call provider APIs.
 
-Reference documentation checked on **2026-10-19**. Technical facts are scoped to the named model/version. Prompt examples and repair advice are original recommendations, not claims of measured model performance.
+The original 15 skills' references were checked on **2026-10-19**; MOSS Image and FLUX 3 Image Klein were added with references checked on **2026-10-22**. Each skill records its own reference date, and the catalogue records date overrides for the additions. Technical facts are scoped to the named model/version. Prompt examples and repair advice are original recommendations, not claims of measured model performance.
 
 ## Install with skills.sh
 
@@ -67,6 +67,8 @@ According to the [skills.sh FAQ](https://skills.sh/docs/faq), directory/leaderbo
 | Pony Diffusion XL | [pony-diffusion-xl](pony-diffusion-xl/SKILL.md) | PurpleSmartAI/AstraliteHeart Pony Diffusion V6 XL; use the V6 checkpoint, not V6-1.5 or Turbo merges |
 | Qwen Image 2.1 | [qwen-image-2-1](qwen-image-2-1/SKILL.md) | Qwen-Image-2.1 (`Qwen/Qwen-Image-2.1`); hosted Pro/Turbo variants have separate contracts |
 | Qwen Image 3 | [qwen-image-3](qwen-image-3/SKILL.md) | Qwen-Image-3.0: hosted `qwen-image-3.0` and `qwen-image-3.0-pro` |
+| MOS / MOSS Image | [moss-image](moss-image/SKILL.md) | OpenMOSS `MOSS-Image-Base` and `MOSS-Image-SFT`; native layout-conditioned text-to-image |
+| FLUX 3 Image Klein | [flux-3-image-klein](flux-3-image-klein/SKILL.md) | Distilled `black-forest-labs/flux-3-image-klein`; expanded captions, reference editing and box layouts |
 
 ## Each package
 
@@ -99,7 +101,7 @@ The builder validates all selected directories before writing archives. Each `di
 
 ## CI and tagged releases
 
-Pull requests and pushes to `main` run the release-tooling tests, validate every skill, build each `.skill` archive and verify its SHA-256 checksum. A separate job uses the pinned skills CLI to discover all 15 skills, install them for Codex, Claude Code and Cursor in temporary projects, and compare the installed files to the source. The resulting packages are also saved as a GitHub Actions build artefact for 14 days. Tagged releases run the same CLI compatibility check before building release assets.
+Pull requests and pushes to `main` run the release-tooling tests, validate every skill, build each `.skill` archive and verify its SHA-256 checksum. A separate job uses the pinned skills CLI to discover every catalogued skill, install them for Codex, Claude Code and Cursor in temporary projects, and compare the installed files to the source. The resulting packages are also saved as a GitHub Actions build artefact for 14 days. Tagged releases run the same CLI compatibility check before building release assets.
 
 The release workflow runs when a collection-wide version tag is pushed. Once these workflow files are committed and pushed, create a release from the intended commit:
 
@@ -110,10 +112,10 @@ git push origin v1.0.0
 
 Tags must use `vMAJOR.MINOR.PATCH`, optionally followed by a SemVer prerelease suffix such as `v1.1.0-rc.1`. Leading zeroes in version numbers and numeric prerelease identifiers are rejected. Build metadata suffixes (`+...`) aren't accepted. Prerelease tags are automatically marked as prereleases. Version numbers refer to this skill collection, independently of the model versions in directory names.
 
-Every successful release has these **19 downloadable assets**:
+With the current catalogue, every successful release has these **21 downloadable assets**:
 
-- All 15 skills attached individually as `<skill-name>.skill`, each containing its own directory and embedded references.
-- `text-2-image-skills-<tag>.zip`, containing all 15 source skill directories plus the README, licence and catalogue.
+- All 17 skills attached individually as `<skill-name>.skill`, each containing its own directory and embedded references.
+- `text-2-image-skills-<tag>.zip`, containing all source skill directories plus the README, licence and catalogue.
 - `catalog.json` and `release.json`, recording the model catalogue, version tag and source commit.
 - `SHA256SUMS`, covering every other attached asset.
 
@@ -161,6 +163,8 @@ The top-level model folders are intentional. Don't add an umbrella `SKILL.md` at
 - Klein 9B means the distilled model. Base, 4B, KV and moving preview variants aren't silently substituted.
 - Juggernaut XL uses v9 as an explicitly documented baseline while preserving a supplied XL version. Pony targets original V6 XL.
 - Qwen 3 means Qwen-Image-3.0 in this collection. Qwen3 language models and Qwen3-VL aren't image generators by that name. Qwen 2.1 RGBA and reference limits aren't carried forward into 3.0.
+- MOS is resolved to OpenMOSS's MOSS-Image family. Base/SFT layout revisions aren't a claim of native image-to-image editing. MOSS layout boxes use centred absolute pixels in yxyx order.
+- FLUX 3 Image Klein is the distilled checkpoint, distinct from FLUX.2 Klein 9B, Klein Base and the separate PUP rewriter. Its expanded captions and 0-1000 box grid have their own conventions; the embedded references distinguish local Klein and hosted edit-row schemas.
 
 ## Validation scope
 

@@ -89,12 +89,16 @@ class BuildTests(unittest.TestCase):
                     self.assertNotIn('.DS_Store', name)
                     self.assertEqual(archive.read(name), (self.root / name).read_bytes())
         with zipfile.ZipFile(output / 'text-2-image-skills-v1.0.0.zip') as bundle:
-            self.assertEqual(len(bundle.namelist()), 15 * 6 + 3)
+            self.assertEqual(len(bundle.namelist()), len(self.catalog['skills']) * 6 + 3)
             self.assertIsNone(bundle.testzip())
         metadata = json.loads((output / 'release.json').read_text())
         self.assertEqual(metadata['source_commit'], 'a' * 40)
         self.assertEqual(metadata['tag'], 'v1.0.0')
         self.assertEqual({item['asset'] for item in metadata['skills']}, skills)
+        expected_dates = {entry['directory']: entry.get('reference_date', self.catalog['reference_date'])
+                          for entry in self.catalog['skills']}
+        self.assertEqual({item['name']: item['reference_date'] for item in metadata['skills']},
+                         expected_dates)
         hashed = set()
         for line in (output / 'SHA256SUMS').read_text().splitlines():
             digest, name = line.split('  ')
@@ -119,6 +123,44 @@ class BuildTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.build()
         self.assertFalse((Path(self.temporary.name) / 'release').exists())
+
+    def test_catalog_growth_is_included_in_individual_assets_and_bundle(self):
+        name = 'additional-image'
+        source = self.root / 'nano-banana'
+        target = self.root / name
+        shutil.copytree(source, target)
+        skill = target / 'SKILL.md'
+        skill.write_text(skill.read_text().replace('name: nano-banana\n', f'name: {name}\n', 1))
+        self.catalog['skills'].append({
+            'directory': name, 'display_name': 'Additional Image',
+            'model_identity': 'Test fixture', 'archive': f'dist/{name}.skill',
+        })
+        (self.root / 'catalog.json').write_text(json.dumps(self.catalog))
+        output = self.build()
+        self.assertTrue((output / f'{name}.skill').is_file())
+        metadata = json.loads((output / 'release.json').read_text())
+        self.assertEqual(metadata['skill_count'], len(self.catalog['skills']))
+        self.assertIn(name, {entry['name'] for entry in metadata['skills']})
+        with zipfile.ZipFile(output / 'text-2-image-skills-v1.0.0.zip') as bundle:
+            self.assertIn(f'text-2-image-skills-v1.0.0/{name}/SKILL.md', bundle.namelist())
+
+    def test_catalog_rejects_duplicate_entries(self):
+        self.catalog['skills'].append(self.catalog['skills'][0])
+        (self.root / 'catalog.json').write_text(json.dumps(self.catalog))
+        with self.assertRaisesRegex(ValueError, 'unique'):
+            package_skills.load_catalog()
+
+    def test_catalog_rejects_empty_collection(self):
+        self.catalog['skills'] = []
+        (self.root / 'catalog.json').write_text(json.dumps(self.catalog))
+        with self.assertRaisesRegex(ValueError, 'at least one'):
+            package_skills.load_catalog()
+
+    def test_catalog_rejects_uncatalogued_skill(self):
+        self.catalog['skills'].pop()
+        (self.root / 'catalog.json').write_text(json.dumps(self.catalog))
+        with self.assertRaisesRegex(ValueError, 'does not match'):
+            package_skills.load_catalog()
 
 
 class PublishTests(unittest.TestCase):
