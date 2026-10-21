@@ -1,0 +1,59 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Google",
+      "description": "Prompt writing and refinement for the Nano Banana image models.",
+      "skills": [
+        "nano-banana",
+        "nano-banana-pro",
+        "nano-banana-2"
+      ]
+    },
+    {
+      "title": "OpenAI",
+      "description": "Generation and editing prompt guidance for GPT Image models.",
+      "skills": [
+        "gpt-image-2",
+        "gpt-image-2-5"
+      ]
+    },
+    {
+      "title": "FLUX",
+      "description": "Model-specific prompting for Black Forest Labs FLUX models.",
+      "skills": [
+        "flux-1-dev",
+        "flux-1-pro",
+        "flux-2-dev",
+        "flux-2-pro",
+        "flux-2-klein-9b",
+        "flux-3-image-klein"
+      ]
+    },
+    {
+      "title": "Qwen",
+      "description": "Generation and editing prompt guidance for Qwen Image models.",
+      "skills": [
+        "qwen-image-2-1",
+        "qwen-image-3"
+      ]
+    },
+    {
+      "title": "OpenMOSS",
+      "description": "Prompt writing and layout guidance for MOSS Image models.",
+      "skills": [
+        "moss-image"
+      ]
+    },
+    {
+      "title": "SDXL family",
+      "description": "Prompt writing and refinement for SDXL, Juggernaut XL and Pony Diffusion XL.",
+      "skills": [
+        "sdxl",
+        "juggernaut-xl",
+        "pony-diffusion-xl"
+      ]
+    }
+  ]
+}
