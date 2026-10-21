@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Independent, model-specific image prompt skills. Browse the catalogue, copy an install command or download a self-contained skill package.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f7f6f0">
+  <title>Text / Image - model-specific prompt skills</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/source-serif-4.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#catalogue">Skip to model catalogue</a>
+  <header class="site-header page-width">
+    <a class="wordmark" href="./" aria-label="Text / Image home">text <span>/</span> image<span class="wordmark-dot" aria-hidden="true"></span></a>
+    <nav aria-label="Main navigation">
+      <a href="#catalogue">Catalogue</a>
+      <a href="#installation">Install</a>
+      <a href="https://github.com/rzem-ai/text-2-image-skills">GitHub</a>
+    </nav>
+  </header>
+  <main class="page-width">
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <h1 id="page-title">A field guide to<br>image prompts.</h1>
+        <p class="lead">Different models. Different ways to ask.</p>
+        <p>Model-specific skills for writing and refining image prompts. Each one brings its own reference notes, examples and editing guidance.</p>
+        <a class="text-link" href="#catalogue">Find your model</a>
+      </div>
+      <aside class="install-panel" aria-labelledby="quick-install-title">
+        <h2 id="quick-install-title">Start in your project</h2>
+        <p>Choose the skills and agents you want with the skills CLI.</p>
+        <div class="command-line">
+          <code>npx skills add rzem-ai/text-2-image-skills</code>
+          <button type="button" class="copy-button" data-copy="npx skills add rzem-ai/text-2-image-skills" data-label="the collection" hidden>Copy command</button>
+        </div>
+        <p class="panel-note">Works with Codex, Claude Code, Cursor and other agents supported by <a href="https://skills.sh/docs">skills.sh</a>. The CLI requires Node.js 22.20 or later.</p>
+      </aside>
+    </section>
+
+    <section id="catalogue" class="catalogue" aria-labelledby="catalogue-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="catalogue-title">Find your model</h2>
+          <p><!-- SKILL_COUNT --> independent skills, with all references included.</p>
+        </div>
+        <a class="download-all" href="downloads/text-2-image-skills.zip" download>Download all skills</a>
+      </div>
+      <div class="catalogue-tools" hidden>
+        <label class="search-label" for="model-search">Search the catalogue
+          <input id="model-search" type="search" placeholder="Try Qwen, MOSS or typography" autocomplete="off">
+        </label>
+        <div class="family-filters" role="group" aria-label="Filter by model family">
+          <!-- FAMILY_FILTERS -->
+        </div>
+      </div>
+      <p class="results" id="results" role="status" aria-live="polite">Showing all <!-- SKILL_COUNT --> skills</p>
+      <div class="model-list">
+        <!-- MODEL_ROWS -->
+      </div>
+      <div class="empty-state" id="empty-state" hidden>
+        <h3>No matching models</h3>
+        <p>Try another model name or clear your filters.</p>
+        <button type="button" id="reset-filters">Clear filters</button>
+      </div>
+      <p class="download-note">Downloads are built from this site's source commit. For versioned packages and release notes, visit <a href="https://github.com/rzem-ai/text-2-image-skills/releases">GitHub Releases</a>. <a href="downloads/SHA256SUMS">Verify checksums</a>.</p>
+    </section>
+
+    <section class="installation" id="installation" aria-labelledby="installation-title">
+      <div>
+        <h2 id="installation-title">One model or the whole collection.</h2>
+        <p>Run an install command in your project. Choose your agent interactively, or specify one with <code>--agent codex</code>, <code>--agent claude-code</code> or <code>--agent cursor</code>.</p>
+        <p>Prefer a file? Every download is a ZIP-format <code>.skill</code> package with an entry point and embedded references. Follow your agent's installation instructions for local skill directories.</p>
+      </div>
+      <div class="install-examples">
+        <h3>List available skills</h3>
+        <div class="command-line">
+          <code>npx skills add rzem-ai/text-2-image-skills --list</code>
+          <button type="button" class="copy-button" data-copy="npx skills add rzem-ai/text-2-image-skills --list" data-label="the list command" hidden>Copy</button>
+        </div>
+        <h3>Install every skill for Codex</h3>
+        <div class="command-line">
+          <code>npx skills add rzem-ai/text-2-image-skills --skill '*' --agent codex --yes</code>
+          <button type="button" class="copy-button" data-copy="npx skills add rzem-ai/text-2-image-skills --skill '*' --agent codex --yes" data-label="the full Codex install command" hidden>Copy</button>
+        </div>
+        <p>Add <code>--global</code> for a user-wide installation, or <code>--copy</code> to copy files instead of using the CLI's default shared layout.</p>
+      </div>
+    </section>
+    <section class="scope-note" aria-labelledby="scope-title">
+      <h2 id="scope-title">Prompt guidance, with the details kept close.</h2>
+      <p>These skills help write and refine prompts. They don't run image generation. Capabilities and reference dates are recorded per model; examples are authored suggestions, not rendered benchmarks.</p>
+    </section>
+  </main>
+  <footer class="site-footer page-width">
+    <span>Made by <a href="https://github.com/rzem-ai">Alex / rzem-ai</a>. <a href="https://github.com/rzem-ai/text-2-image-skills/blob/main/LICENSE">MIT licence</a>.</span>
+    <span>Built from <a href="https://github.com/rzem-ai/text-2-image-skills/commit/<!-- SOURCE_COMMIT -->"><!-- SHORT_COMMIT --></a></span>
+  </footer>
+  <div class="copy-status" id="copy-status" role="status" aria-live="polite"></div>
+</body>
+</html>

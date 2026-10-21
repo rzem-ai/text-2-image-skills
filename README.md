@@ -4,6 +4,8 @@ Seventeen independently packageable skills for writing, refining and troubleshoo
 
 The original 15 skills' references were checked on **2026-10-19**; MOSS Image and FLUX 3 Image Klein were added with references checked on **2026-10-22**. Each skill records its own reference date, and the catalogue records date overrides for the additions. Technical facts are scoped to the named model/version. Prompt examples and repair advice are original recommendations, not claims of measured model performance.
 
+Browse the [searchable catalogue and installation guide](https://rzem-ai.github.io/text-2-image-skills/), with individual skill downloads and a combined ZIP.
+
 ## Install with skills.sh
 
 This repository follows the [Agent Skills format](https://agentskills.io/specification) and works with the [skills CLI](https://github.com/vercel-labs/skills). Each model directory is discovered as a separate skill; its embedded references are installed with it. No npm publication, repository-level skill manifest or directory rearrangement is required.
@@ -169,3 +171,18 @@ The top-level model folders are intentional. Don't add an umbrella `SKILL.md` at
 ## Validation scope
 
 The repository packaging checks cover expected packages, frontmatter, metadata, required embedded files, internal links, package isolation and archive integrity. They do not run models or verify the visual quality of prompt examples. The source notes record where model-specific claims came from.
+
+## Catalogue website
+
+GitHub Pages serves the static catalogue at <https://rzem-ai.github.io/text-2-image-skills/>. The Pages workflow tests and builds pull requests, then publishes changes pushed to `main`. Model listings come from `catalog.json` and each skill's metadata, so the website and downloads stay together.
+
+Build and preview locally with Python 3.10 or later; no npm packages are needed for the website:
+
+```sh
+python3 scripts/build_site.py --output /tmp/image-skills-site
+python3 -m http.server 8000 --directory /tmp/image-skills-site
+```
+
+Open <http://localhost:8000>. The build refuses to overwrite an existing output directory; choose a fresh directory for a rebuild. Site downloads are generated from the source revision displayed in the footer. They are distinct from the versioned assets on the GitHub Releases page. The builder also writes `build.json` and download checksums for verification.
+
+The site uses a self-hosted Source Serif 4 font under the SIL Open Font Licence; its licence is included in `site/assets/FONT-LICENSE.txt`.

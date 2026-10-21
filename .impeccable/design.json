@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T22:45:31.795886+00:00",
+  "title": "Design System: Text / Image",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted"
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule"
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Accent"
+      },
+      "action": {
+        "role": "primary",
+        "displayName": "Action"
+      },
+      "field": {
+        "role": "neutral",
+        "displayName": "Field"
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Panel"
+      },
+      "panel-ink": {
+        "role": "neutral",
+        "displayName": "Panel ink"
+      },
+      "panel-muted": {
+        "role": "neutral",
+        "displayName": "Panel muted"
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus"
+      },
+      "dark-paper": {
+        "role": "neutral",
+        "displayName": "Dark paper"
+      },
+      "dark-ink": {
+        "role": "neutral",
+        "displayName": "Dark ink"
+      },
+      "dark-muted": {
+        "role": "neutral",
+        "displayName": "Dark muted"
+      },
+      "dark-rule": {
+        "role": "neutral",
+        "displayName": "Dark rule"
+      },
+      "dark-action": {
+        "role": "neutral",
+        "displayName": "Dark action"
+      },
+      "dark-field": {
+        "role": "neutral",
+        "displayName": "Dark field"
+      },
+      "dark-panel": {
+        "role": "neutral",
+        "displayName": "Dark panel"
+      },
+      "dark-focus": {
+        "role": "neutral",
+        "displayName": "Dark focus"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Main page heading."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings."
+      },
+      "title": {
+        "displayName": "Model title",
+        "purpose": "Catalogue model headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default reading text."
+      },
+      "label": {
+        "displayName": "Control label",
+        "purpose": "Copy and reset button labels."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Install commands and inline code."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "anchor-scroll",
+        "value": "smooth",
+        "purpose": "Anchor navigation; auto when reduced motion is requested."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "900px"
+      },
+      {
+        "name": "stacked",
+        "value": "680px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Copy button",
+      "kind": "button",
+      "refersTo": "copy-button",
+      "description": "Copy an installation command.",
+      "html": "<button class=\"ds-copy\" type=\"button\">Copy command</button>",
+      "css": ".ds-copy{font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;line-height:1.6;border:1px solid var(--rule,#ccd3c6);border-radius:7px;padding:9px 15px;min-height:44px;background:transparent;color:var(--ink,#1e3029);font-size:.86rem;font-weight:550;cursor:pointer}.ds-copy:hover{background:var(--accent,#dce8b7);color:#1e3029}.ds-copy:focus-visible{outline:3px solid var(--focus,#276347);outline-offset:4px;}"
+    },
+    {
+      "name": "Download link",
+      "kind": "button",
+      "refersTo": "download-link",
+      "description": "Download all packages from the source build.",
+      "html": "<a class=\"ds-download\" href=\"#downloads\">Download all skills</a>",
+      "css": ".ds-download{font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;line-height:1.6;display:inline-flex;align-items:center;min-height:44px;padding:10px 18px;border:1px solid var(--ink,#1e3029);border-radius:7px;white-space:nowrap;font-size:.94rem;font-weight:550;text-decoration:none;color:var(--ink,#1e3029)}.ds-download:hover{background:var(--ink,#1e3029);color:var(--paper,#f7f6f0)}.ds-download:focus-visible{outline:3px solid var(--focus,#276347);outline-offset:4px;}"
+    },
+    {
+      "name": "Catalogue search",
+      "kind": "input",
+      "refersTo": "search",
+      "description": "Labelled search for model names and guidance.",
+      "html": "<label class=\"ds-label\">Search the catalogue<input class=\"ds-search\" type=\"search\" placeholder=\"Try Qwen, MOSS or typography\"></label>",
+      "css": ".ds-label{font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;line-height:1.6;display:block;color:var(--muted,#536258);font-size:.88rem;font-weight:550}.ds-search{font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;line-height:1.6;box-sizing:border-box;display:block;width:min(100%,560px);min-height:50px;margin-top:8px;padding:10px 16px;background:var(--field,#fffef9);color:var(--ink,#1e3029);border:1px solid var(--rule,#ccd3c6);border-radius:7px;font-size:1rem;caret-color:var(--action,#285b42)}.ds-search::placeholder{color:var(--muted,#536258);opacity:1}.ds-search:focus-visible{outline:3px solid var(--focus,#276347);outline-offset:4px;}"
+    },
+    {
+      "name": "Family filter",
+      "kind": "chip",
+      "refersTo": "family-filter-selected",
+      "description": "Pressed state marks the active family filter.",
+      "html": "<button class=\"ds-filter\" type=\"button\" aria-pressed=\"true\">All models</button>",
+      "css": ".ds-filter{font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;line-height:1.6;min-height:44px;padding:9px 15px;border:1px solid transparent;border-radius:7px;background:transparent;color:var(--muted,#536258);font-size:.86rem;cursor:pointer}.ds-filter:hover{border-color:var(--rule,#ccd3c6);color:var(--ink,#1e3029)}.ds-filter[aria-pressed=\"true\"]{background:var(--accent,#dce8b7);color:#1e3029;font-weight:600}.ds-filter:focus-visible{outline:3px solid var(--focus,#276347);outline-offset:4px;}"
+    },
+    {
+      "name": "Main navigation",
+      "kind": "nav",
+      "description": "Plain text links for catalogue, installation and repository.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"#catalogue\">Catalogue</a><a href=\"#installation\">Install</a><a href=\"https://github.com/rzem-ai/text-2-image-skills\">GitHub</a></nav>",
+      "css": ".ds-nav{font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;line-height:1.6;display:flex;gap:28px}.ds-nav a{display:inline-flex;align-items:center;min-height:44px;font-size:.94rem;text-decoration:none;color:var(--ink,#1e3029);text-underline-offset:.22em;text-decoration-thickness:1px}.ds-nav a:hover{color:var(--action,#285b42);text-decoration:underline}.ds-nav a:focus-visible{outline:3px solid var(--focus,#276347);outline-offset:4px;}@media(max-width:680px){.ds-nav{gap:15px}.ds-nav a{font-size:.81rem}}"
+    },
+    {
+      "name": "Installation panel",
+      "kind": "custom",
+      "refersTo": "installation-panel",
+      "description": "Contrasting panel for the collection installation command.",
+      "html": "<aside class=\"ds-panel\"><h2>Start in your project</h2><p>Choose the skills and agents you want with the skills CLI.</p><code>npx skills add rzem-ai/text-2-image-skills</code></aside>",
+      "css": ".ds-panel{font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;line-height:1.6;background:var(--panel,#1e3029);color:var(--panel-ink,#f3f5e9);padding:32px;border-radius:16px}.ds-panel h2{margin:0 0 12px;font:550 1.35rem/1.18 -apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;letter-spacing:-.015em}.ds-panel p{color:var(--panel-muted,#c5d1c1);margin:0 0 1rem;max-width:70ch}.ds-panel code{display:block;font-family:\"SFMono-Regular\",Consolas,\"Liberation Mono\",monospace;font-size:.93rem;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere;margin:24px 0}@media(max-width:900px){.ds-panel{padding:26px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "",
+    "overview": "A quiet technical field guide for finding and installing model-specific image-prompt skills. Serif headings introduce the content; compact sans-serif labels and monospace commands keep the catalogue practical.\n\nThe page uses open space, fine rules and one contrasting installation panel. Its visual character comes from the warm paper and green palette, with the same hierarchy adapted to the reader's system dark-mode preference.",
+    "keyCharacteristics": [
+      "Serif headings paired with system sans-serif text.",
+      "A ruled catalogue with compact, legible actions.",
+      "Automatic light and dark colours; wrapping command text on small screens."
+    ],
+    "rules": [
+      {
+        "name": "The Theme Pairing Rule",
+        "body": "Use the corresponding dark role when the system selects dark mode; preserve the existing contrast relationships.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do use the existing colour roles in both system themes.",
+      "Do keep model rows separated with fine rules and open space.",
+      "Do preserve visible keyboard focus and the implemented minimum control heights.",
+      "Do let command text wrap and keep catalogue actions usable at phone widths."
+    ],
+    "donts": [
+      "Don't replace the catalogue rows with an unrelated card system.",
+      "Don't introduce shadows or decorative motion into the existing flat interface.",
+      "Don't hide install commands or essential catalogue links behind JavaScript."
+    ]
+  }
+}
