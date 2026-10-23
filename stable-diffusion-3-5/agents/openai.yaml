@@ -1,0 +1,3 @@
+interface:
+  display_name: "Stable Diffusion 3.5 Prompts"
+  short_description: "Write and refine Stable Diffusion 3.5 image prompts"

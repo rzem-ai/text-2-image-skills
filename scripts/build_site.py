@@ -24,10 +24,11 @@ REPOSITORY = 'https://github.com/rzem-ai/text-2-image-skills'
 def family_for(name):
     for prefix, label in (('nano-banana', 'Google'), ('gpt-image', 'OpenAI'),
                           ('flux-', 'Black Forest Labs'), ('qwen-', 'Qwen'),
-                          ('moss-', 'OpenMOSS')):
+                          ('moss-', 'OpenMOSS'), ('ideogram', 'Ideogram'),
+                          ('stable-diffusion-', 'Stability AI')):
         if name.startswith(prefix):
             return label
-    if name in {'sdxl', 'juggernaut-xl', 'pony-diffusion-xl'}:
+    if name in {'sdxl', 'juggernaut-xl', 'pony-diffusion-xl', 'noobai-xl'}:
         return 'SDXL family'
     return 'Independent'
 

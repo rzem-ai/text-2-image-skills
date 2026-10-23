@@ -20,6 +20,13 @@
       ]
     },
     {
+      "title": "Ideogram",
+      "description": "Typography-led generation and editing prompts for Ideogram models.",
+      "skills": [
+        "ideogram-4-5"
+      ]
+    },
+    {
       "title": "FLUX",
       "description": "Model-specific prompting for Black Forest Labs FLUX models.",
       "skills": [
@@ -28,7 +35,8 @@
         "flux-2-dev",
         "flux-2-pro",
         "flux-2-klein-9b",
-        "flux-3-image-klein"
+        "flux-3-image-klein",
+        "flux-3-image"
       ]
     },
     {
@@ -47,12 +55,21 @@
       ]
     },
     {
+      "title": "Stability AI",
+      "description": "Prompt writing and refinement for Stable Diffusion 2 and 3.5.",
+      "skills": [
+        "stable-diffusion-2",
+        "stable-diffusion-3-5"
+      ]
+    },
+    {
       "title": "SDXL family",
-      "description": "Prompt writing and refinement for SDXL, Juggernaut XL and Pony Diffusion XL.",
+      "description": "Prompt writing and refinement for SDXL, Juggernaut XL, Pony Diffusion XL and NoobAI-XL.",
       "skills": [
         "sdxl",
         "juggernaut-xl",
-        "pony-diffusion-xl"
+        "pony-diffusion-xl",
+        "noobai-xl"
       ]
     }
   ]

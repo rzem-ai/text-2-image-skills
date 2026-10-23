@@ -1,8 +1,8 @@
 # Image prompt skills
 
-Seventeen independently packageable skills for writing, refining and troubleshooting text-to-image prompts and image-to-image briefs. They contain embedded reference notes and original prompt examples. They do not run image generation, install models or call provider APIs.
+Twenty-two independently packageable skills for writing, refining and troubleshooting text-to-image prompts and image-to-image briefs. They contain embedded reference notes and original prompt examples. They do not run image generation, install models or call provider APIs.
 
-The original 15 skills' references were checked on **2026-10-19**; MOSS Image and FLUX 3 Image Klein were added with references checked on **2026-10-22**. Each skill records its own reference date, and the catalogue records date overrides for the additions. Technical facts are scoped to the named model/version. Prompt examples and repair advice are original recommendations, not claims of measured model performance.
+The original 15 skills' references were checked on **2026-10-19**; MOSS Image and FLUX 3 Image Klein were added with references checked on **2026-10-22**; Ideogram 4.5, FLUX 3 Image, Stable Diffusion 2, Stable Diffusion 3.5 and NoobAI-XL on **2026-10-23**. Each skill records its own reference date, and the catalogue records date overrides for the additions. Technical facts are scoped to the named model/version. Prompt examples and repair advice are original recommendations, not claims of measured model performance.
 
 Browse the [searchable catalogue and installation guide](https://rzem-ai.github.io/text-2-image-skills/), with individual skill downloads and a combined ZIP.
 
@@ -71,6 +71,11 @@ According to the [skills.sh FAQ](https://skills.sh/docs/faq), directory/leaderbo
 | Qwen Image 3 | [qwen-image-3](qwen-image-3/SKILL.md) | Qwen-Image-3.0: hosted `qwen-image-3.0` and `qwen-image-3.0-pro` |
 | MOS / MOSS Image | [moss-image](moss-image/SKILL.md) | OpenMOSS `MOSS-Image-Base` and `MOSS-Image-SFT`; native layout-conditioned text-to-image |
 | FLUX 3 Image Klein | [flux-3-image-klein](flux-3-image-klein/SKILL.md) | Distilled `black-forest-labs/flux-3-image-klein`; expanded captions, reference editing and box layouts |
+| Ideogram | [ideogram-4-5](ideogram-4-5/SKILL.md) | Ideogram 4.5 (`ideogram-4-5`), hosted flagship for generation and Precise Edit; 4.0 and 3.0 have separate contracts |
+| FLUX.3 | [flux-3-image](flux-3-image/SKILL.md) | Black Forest Labs hosted FLUX 3 Image (`flux-3-image`); generation, reference editing and box layouts |
+| Stable Diffusion 2 | [stable-diffusion-2](stable-diffusion-2/SKILL.md) | Stability AI SD 2.1 (`stabilityai/stable-diffusion-2-1`) 768 v-prediction baseline, plus 2.0, 512 base and official edit variants |
+| Stable Diffusion 3.5 | [stable-diffusion-3-5](stable-diffusion-3-5/SKILL.md) | Stability AI SD 3.5 Large, Large Turbo and Medium (`stabilityai/stable-diffusion-3.5-*`) |
+| NoobAI | [noobai-xl](noobai-xl/SKILL.md) | Laxhar Lab NoobAI-XL; Epsilon 1.1 (`Laxhar/noobai-XL-1.1`) baseline, V-Pred 1.0 as a separate variant |
 
 ## Each package
 
@@ -114,9 +119,9 @@ git push origin v1.0.0
 
 Tags must use `vMAJOR.MINOR.PATCH`, optionally followed by a SemVer prerelease suffix such as `v1.1.0-rc.1`. Leading zeroes in version numbers and numeric prerelease identifiers are rejected. Build metadata suffixes (`+...`) aren't accepted. Prerelease tags are automatically marked as prereleases. Version numbers refer to this skill collection, independently of the model versions in directory names.
 
-With the current catalogue, every successful release has these **21 downloadable assets**:
+With the current catalogue, every successful release has these **26 downloadable assets**:
 
-- All 17 skills attached individually as `<skill-name>.skill`, each containing its own directory and embedded references.
+- All 22 skills attached individually as `<skill-name>.skill`, each containing its own directory and embedded references.
 - `text-2-image-skills-<tag>.zip`, containing all source skill directories plus the README, licence and catalogue.
 - `catalog.json` and `release.json`, recording the model catalogue, version tag and source commit.
 - `SHA256SUMS`, covering every other attached asset.
@@ -167,6 +172,11 @@ The top-level model folders are intentional. Don't add an umbrella `SKILL.md` at
 - Qwen 3 means Qwen-Image-3.0 in this collection. Qwen3 language models and Qwen3-VL aren't image generators by that name. Qwen 2.1 RGBA and reference limits aren't carried forward into 3.0.
 - MOS is resolved to OpenMOSS's MOSS-Image family. Base/SFT layout revisions aren't a claim of native image-to-image editing. MOSS layout boxes use centred absolute pixels in yxyx order.
 - FLUX 3 Image Klein is the distilled checkpoint, distinct from FLUX.2 Klein 9B, Klein Base and the separate PUP rewriter. Its expanded captions and 0-1000 box grid have their own conventions; the embedded references distinguish local Klein and hosted edit-row schemas.
+- Ideogram means Ideogram 4.5 (`ideogram-4-5`). It takes plain-text or structured JSON prompts and up to five references but has no negative prompt, style presets or style references; those belong to Ideogram 3.0. Open-weight Ideogram 4.0 and Remix are separate.
+- FLUX.3 means hosted FLUX 3 Image, not Klein. It has no `prompt_upsampling` or `negative_prompt` field, and its hosted box edits use `from: null` where local Klein uses `from: "target"`. No FLUX 3 Dev checkpoint was public at the reference date.
+- Stable Diffusion 2 targets 2.1 768 v-prediction; the 512 base, inpainting and depth checkpoints are noise-prediction models from 2.0-base. Its OpenCLIP ViT-H encoder means SD 1.5 artist names and clip-skip habits don't carry over. Most official 2.x repositories were offline at the reference date, so card facts come from archived copies.
+- Stable Diffusion 3.5 is distinct from SD3 Medium. Large Turbo runs without CFG, so negative prompts don't apply; Stable Image Ultra/Core and the hosted-only SD 3.5 Flash aren't covered.
+- NoobAI-XL epsilon (1.1) and v-prediction (V-Pred 1.0) lines use different samplers and CFG; settings don't transfer. It isn't Illustrious base, Pony or generic SDXL, and its licence prohibits commercial use.
 
 ## Validation scope
 

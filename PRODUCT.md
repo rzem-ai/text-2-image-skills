@@ -16,7 +16,7 @@ Readers choosing a model-specific prompt-writing skill and installing it into an
 
 ## Capabilities and Constraints
 
-The catalogue currently contains 17 independent prompt-writing skills, each with embedded references. The site must use catalog.json as its source of truth, distinguish current-source downloads from tagged releases, and preserve individual packages. It must not imply that the skills execute image generation or that examples were rendered and benchmarked.
+The catalogue currently contains 22 independent prompt-writing skills, each with embedded references. The site must use catalog.json as its source of truth, distinguish current-source downloads from tagged releases, and preserve individual packages. It must not imply that the skills execute image generation or that examples were rendered and benchmarked.
 
 Hosting is GitHub Pages, as explicitly requested. Plain static HTML, CSS and JavaScript with a Python build step are the implementation choice for this basic site; no application server is needed.
 
