@@ -58,8 +58,8 @@
       "title": "Stability AI",
       "description": "Prompt writing and refinement for Stable Diffusion 2 and 3.5.",
       "skills": [
-        "stable-diffusion-2",
-        "stable-diffusion-3-5"
+        "sd-2",
+        "sd-3-5"
       ]
     },
     {

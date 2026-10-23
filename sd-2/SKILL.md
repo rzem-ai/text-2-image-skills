@@ -1,11 +1,11 @@
 ---
-name: stable-diffusion-2
+name: sd-2
 description: "Write, refine and troubleshoot text-to-image prompts, negative prompts and image-to-image, inpainting, depth2img and x4-upscaler briefs for Stability AI Stable Diffusion 2.x (2.0, 2.1 768-v, 2.1-base 512 and its official variants). Use when this model is requested or an existing prompt targets it; provides embedded model references without executing generation. Not for SD 1.5, SDXL or SD3."
 ---
 
 # Stable Diffusion 2 prompt writing
 
-Write copy-ready prompts for Stability AI Stable Diffusion 2.1 (`stabilityai/stable-diffusion-2-1`, the 768x768 v-prediction checkpoint). Also covers 2.0, the 512x512 base checkpoints and the official inpainting, depth, x4-upscaler and unCLIP variants when the user names one. This skill writes and refines prompts; it does not generate images, call APIs, install models or run an official prompt-enhancement model.
+Write copy-ready prompts for Stability AI Stable Diffusion 2.1 (`stabilityai/sd-2-1`, the 768x768 v-prediction checkpoint). Also covers 2.0, the 512x512 base checkpoints and the official inpainting, depth, x4-upscaler and unCLIP variants when the user names one. This skill writes and refines prompts; it does not generate images, call APIs, install models or run an official prompt-enhancement model.
 
 Stable Diffusion 1.5, SDXL and SD3 use different text encoders and prompting habits. Don't apply this package to them, and don't silently move an SD 2.x request to a newer model.
 

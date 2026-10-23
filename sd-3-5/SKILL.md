@@ -1,5 +1,5 @@
 ---
-name: stable-diffusion-3-5
+name: sd-3-5
 description: "Write, refine and troubleshoot text-to-image prompts and image-to-image briefs for Stability AI Stable Diffusion 3.5 Large, Large Turbo and Medium, including quoted typography, CLIP/T5 prompt splitting, negative prompts and ControlNet or hosted-edit briefs. Use for stabilityai/stable-diffusion-3.5-* checkpoints or the Stability API sd3 endpoint, not SD3 Medium (June 2024), SDXL, Stable Image Ultra/Core or fine-tunes with their own conventions. Prompt writing only."
 ---
 

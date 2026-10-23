@@ -8,27 +8,27 @@ On the check date the official Stability AI Hugging Face repositories for 2.0, 2
 
 ## Sources
 
-1. [Stable Diffusion v2-1 model card (archived)](https://web.archive.org/web/2024/https://huggingface.co/stabilityai/stable-diffusion-2-1)
+1. [Stable Diffusion v2-1 model card (archived)](https://web.archive.org/web/2024/https://huggingface.co/stabilityai/sd-2-1)
 
    Supports: 2.1-v identity, fine-tune from 2.0-v, `punsafe` schedule, OpenCLIP ViT-H encoder, v-objective, training history of all 2.x checkpoints, English-caption limitation and the documented limitations list. [S1]
 
-2. [Stable Diffusion v2-1-base model card (archived)](https://web.archive.org/web/2024/https://huggingface.co/stabilityai/stable-diffusion-2-1-base)
+2. [Stable Diffusion v2-1-base model card (archived)](https://web.archive.org/web/2024/https://huggingface.co/stabilityai/sd-2-1-base)
 
    Supports: 2.1-base identity, 512 checkpoint and fine-tune from 2.0-base at `punsafe=0.98`. [S2]
 
-3. [Stable Diffusion v2 model card (archived)](https://web.archive.org/web/2024/https://huggingface.co/stabilityai/stable-diffusion-2)
+3. [Stable Diffusion v2 model card (archived)](https://web.archive.org/web/2024/https://huggingface.co/stabilityai/sd-2)
 
    Supports: 2.0-v identity, v-objective training resumed from 2.0-base and 768x768 fine-tuning. [S3]
 
-4. [Stable Diffusion v2-base model card (archived)](https://web.archive.org/web/2024/https://huggingface.co/stabilityai/stable-diffusion-2-base)
+4. [Stable Diffusion v2-base model card (archived)](https://web.archive.org/web/2024/https://huggingface.co/stabilityai/sd-2-base)
 
    Supports: 2.0-base training at 256 then 512, LAION-5B NSFW filter at `punsafe=0.1` and aesthetic score threshold. [S4]
 
-5. [Stable Diffusion v2 inpainting model card (archived)](https://web.archive.org/web/2024/https://huggingface.co/stabilityai/stable-diffusion-2-inpainting)
+5. [Stable Diffusion v2 inpainting model card (archived)](https://web.archive.org/web/2024/https://huggingface.co/stabilityai/sd-2-inpainting)
 
    Supports: Inpainting checkpoint resumed from 2.0-base, LaMa mask strategy, masked-image conditioning, white-to-repaint mask convention and example prompt shape. [S5]
 
-6. [Stable Diffusion v2 depth model card (archived)](https://web.archive.org/web/2024/https://huggingface.co/stabilityai/stable-diffusion-2-depth)
+6. [Stable Diffusion v2 depth model card (archived)](https://web.archive.org/web/2024/https://huggingface.co/stabilityai/sd-2-depth)
 
    Supports: Depth checkpoint resumed from 2.0-base with MiDaS `dpt_hybrid` relative depth conditioning; example use of a negative prompt and strength. [S6]
 
@@ -36,7 +36,7 @@ On the check date the official Stability AI Hugging Face repositories for 2.0, 2
 
    Supports: Upscaler training on 512x512 crops, `noise_level` input, OpenCLIP ViT-H encoder; tokenizer `model_max_length` of 77 in the live repository files. [S7]
 
-8. [Stable Diffusion v2-1-unclip model card (archived)](https://web.archive.org/web/2024/https://huggingface.co/stabilityai/stable-diffusion-2-1-unclip)
+8. [Stable Diffusion v2-1-unclip model card (archived)](https://web.archive.org/web/2024/https://huggingface.co/stabilityai/sd-2-1-unclip)
 
    Supports: unCLIP identity, CLIP image-embedding conditioning and the 0-1000 noise level range. [S8]
 

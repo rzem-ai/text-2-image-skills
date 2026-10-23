@@ -54,28 +54,28 @@ According to the [skills.sh FAQ](https://skills.sh/docs/faq), directory/leaderbo
 
 | Requested model | Skill directory | Identity and scope |
 | --- | --- | --- |
-| Nano Banana | [nano-banana](nano-banana/SKILL.md) | Google Gemini 2.5 Flash Image (`gemini-2.5-flash-image`) |
-| Nano Banana Pro | [nano-banana-pro](nano-banana-pro/SKILL.md) | Google Gemini 3 Pro Image (`gemini-3-pro-image`) |
-| Nano Banana 2 | [nano-banana-2](nano-banana-2/SKILL.md) | Google Gemini 3.1 Flash Image (`gemini-3.1-flash-image`) |
-| GPT Image 2 | [gpt-image-2](gpt-image-2/SKILL.md) | OpenAI GPT Image 2 (`gpt-image-2`) |
-| GPT Image 2.5 | [gpt-image-2-5](gpt-image-2-5/SKILL.md) | OpenAI GPT Image 2.5 Flare (`gpt-image-2.5-flare`) or Sunburst (`gpt-image-2.5-sunburst`) |
 | FLUX.1 Dev | [flux-1-dev](flux-1-dev/SKILL.md) | Black Forest Labs FLUX.1 [dev] (`black-forest-labs/FLUX.1-dev`) |
 | FLUX.1 Pro | [flux-1-pro](flux-1-pro/SKILL.md) | Black Forest Labs original FLUX.1 [pro] (legacy hosted model) |
 | FLUX.2 Dev | [flux-2-dev](flux-2-dev/SKILL.md) | Black Forest Labs FLUX.2 [dev] (`black-forest-labs/FLUX.2-dev`) |
-| FLUX.2 Pro | [flux-2-pro](flux-2-pro/SKILL.md) | Black Forest Labs FLUX.2 [pro] (`flux-2-pro`) |
 | FLUX.2 Klein 9B | [flux-2-klein-9b](flux-2-klein-9b/SKILL.md) | Black Forest Labs distilled FLUX.2 [klein] 9B (`black-forest-labs/FLUX.2-klein-9B`) |
-| SDXL | [sdxl](sdxl/SKILL.md) | Stability AI Stable Diffusion XL 1.0 base (`stabilityai/stable-diffusion-xl-base-1.0`) |
+| FLUX.2 Pro | [flux-2-pro](flux-2-pro/SKILL.md) | Black Forest Labs FLUX.2 [pro] (`flux-2-pro`) |
+| FLUX.3 | [flux-3-image](flux-3-image/SKILL.md) | Black Forest Labs hosted FLUX 3 Image (`flux-3-image`); generation, reference editing and box layouts |
+| FLUX.3 Klein | [flux-3-image-klein](flux-3-image-klein/SKILL.md) | Distilled `black-forest-labs/flux-3-image-klein`; expanded captions, reference editing and box layouts |
+| GPT Image 2 | [gpt-image-2](gpt-image-2/SKILL.md) | OpenAI GPT Image 2 (`gpt-image-2`) |
+| GPT Image 2.5 | [gpt-image-2-5](gpt-image-2-5/SKILL.md) | OpenAI GPT Image 2.5 Flare (`gpt-image-2.5-flare`) or Sunburst (`gpt-image-2.5-sunburst`) |
+| Ideogram | [ideogram-4-5](ideogram-4-5/SKILL.md) | Ideogram 4.5 (`ideogram-4-5`), hosted flagship for generation and Precise Edit; 4.0 and 3.0 have separate contracts |
 | Juggernaut XL | [juggernaut-xl](juggernaut-xl/SKILL.md) | RunDiffusion Juggernaut XL, an SDXL fine-tune family; v9 is the documented baseline here |
+| MOS / MOSS Image | [moss-image](moss-image/SKILL.md) | OpenMOSS `MOSS-Image-Base` and `MOSS-Image-SFT`; native layout-conditioned text-to-image |
+| Nano Banana | [nano-banana](nano-banana/SKILL.md) | Google Gemini 2.5 Flash Image (`gemini-2.5-flash-image`) |
+| Nano Banana 2 | [nano-banana-2](nano-banana-2/SKILL.md) | Google Gemini 3.1 Flash Image (`gemini-3.1-flash-image`) |
+| Nano Banana Pro | [nano-banana-pro](nano-banana-pro/SKILL.md) | Google Gemini 3 Pro Image (`gemini-3-pro-image`) |
+| NoobAI | [noobai-xl](noobai-xl/SKILL.md) | Laxhar Lab NoobAI-XL; Epsilon 1.1 (`Laxhar/noobai-XL-1.1`) baseline, V-Pred 1.0 as a separate variant |
 | Pony Diffusion XL | [pony-diffusion-xl](pony-diffusion-xl/SKILL.md) | PurpleSmartAI/AstraliteHeart Pony Diffusion V6 XL; use the V6 checkpoint, not V6-1.5 or Turbo merges |
 | Qwen Image 2.1 | [qwen-image-2-1](qwen-image-2-1/SKILL.md) | Qwen-Image-2.1 (`Qwen/Qwen-Image-2.1`); hosted Pro/Turbo variants have separate contracts |
 | Qwen Image 3 | [qwen-image-3](qwen-image-3/SKILL.md) | Qwen-Image-3.0: hosted `qwen-image-3.0` and `qwen-image-3.0-pro` |
-| MOS / MOSS Image | [moss-image](moss-image/SKILL.md) | OpenMOSS `MOSS-Image-Base` and `MOSS-Image-SFT`; native layout-conditioned text-to-image |
-| FLUX 3 Image Klein | [flux-3-image-klein](flux-3-image-klein/SKILL.md) | Distilled `black-forest-labs/flux-3-image-klein`; expanded captions, reference editing and box layouts |
-| Ideogram | [ideogram-4-5](ideogram-4-5/SKILL.md) | Ideogram 4.5 (`ideogram-4-5`), hosted flagship for generation and Precise Edit; 4.0 and 3.0 have separate contracts |
-| FLUX.3 | [flux-3-image](flux-3-image/SKILL.md) | Black Forest Labs hosted FLUX 3 Image (`flux-3-image`); generation, reference editing and box layouts |
-| Stable Diffusion 2 | [stable-diffusion-2](stable-diffusion-2/SKILL.md) | Stability AI SD 2.1 (`stabilityai/stable-diffusion-2-1`) 768 v-prediction baseline, plus 2.0, 512 base and official edit variants |
-| Stable Diffusion 3.5 | [stable-diffusion-3-5](stable-diffusion-3-5/SKILL.md) | Stability AI SD 3.5 Large, Large Turbo and Medium (`stabilityai/stable-diffusion-3.5-*`) |
-| NoobAI | [noobai-xl](noobai-xl/SKILL.md) | Laxhar Lab NoobAI-XL; Epsilon 1.1 (`Laxhar/noobai-XL-1.1`) baseline, V-Pred 1.0 as a separate variant |
+| Stable Diffusion 2 | [sd-2](sd-2/SKILL.md) | Stability AI SD 2.1 (`stabilityai/sd-2-1`) 768 v-prediction baseline, plus 2.0, 512 base and official edit variants |
+| Stable Diffusion 3.5 | [sd-3-5](sd-3-5/SKILL.md) | Stability AI SD 3.5 Large, Large Turbo and Medium (`stabilityai/stable-diffusion-3.5-*`) |
+| Stable Diffusion XL | [sdxl](sdxl/SKILL.md) | Stability AI Stable Diffusion XL 1.0 base (`stabilityai/stable-diffusion-xl-base-1.0`) |
 
 ## Each package
 

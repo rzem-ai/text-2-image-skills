@@ -122,17 +122,17 @@
       "reference_date": "2026-10-23"
     },
     {
-      "directory": "stable-diffusion-2",
+      "directory": "sd-2",
       "display_name": "Stable Diffusion 2",
-      "model_identity": "Stability AI Stable Diffusion 2.1 (`stabilityai/stable-diffusion-2-1`) 768 v-prediction baseline; covers 2.0, 512 base, inpainting, depth, x4 upscaler and unCLIP",
-      "archive": "dist/stable-diffusion-2.skill",
+      "model_identity": "Stability AI Stable Diffusion 2.1 (`stabilityai/sd-2-1`) 768 v-prediction baseline; covers 2.0, 512 base, inpainting, depth, x4 upscaler and unCLIP",
+      "archive": "dist/sd-2.skill",
       "reference_date": "2026-10-23"
     },
     {
-      "directory": "stable-diffusion-3-5",
+      "directory": "sd-3-5",
       "display_name": "Stable Diffusion 3.5",
       "model_identity": "Stability AI Stable Diffusion 3.5 Large, Large Turbo and Medium (`stabilityai/stable-diffusion-3.5-*`)",
-      "archive": "dist/stable-diffusion-3-5.skill",
+      "archive": "dist/sd-3-5.skill",
       "reference_date": "2026-10-23"
     },
     {

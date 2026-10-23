@@ -7,10 +7,10 @@ Bracketed evidence labels resolve in [sources.md](sources.md). Strength, noise a
 | Need | Checkpoint | Prompt-relevant consequence |
 | --- | --- | --- |
 | Restyle or rework a whole image | 2.1-v or 2.1-base with img2img | Describe the finished image. Strength controls how much changes. |
-| Replace one region | `stable-diffusion-2-inpainting` | Describe the filled region in the context of the whole scene. Requires a mask. [S5] |
-| Keep layout and shape, change look | `stable-diffusion-2-depth` | Describe new materials, lighting and style; geometry follows the depth estimate. [S6, S9] |
+| Replace one region | `sd-2-inpainting` | Describe the filled region in the context of the whole scene. Requires a mask. [S5] |
+| Keep layout and shape, change look | `sd-2-depth` | Describe new materials, lighting and style; geometry follows the depth estimate. [S6, S9] |
 | Enlarge an image 4x | `stable-diffusion-x4-upscaler` | Describe what the image already shows. [S7] |
-| Variations of a picture | `stable-diffusion-2-1-unclip` | The image embedding carries most of the content; text nudges it. [S8] |
+| Variations of a picture | `sd-2-1-unclip` | The image embedding carries most of the content; text nudges it. [S8] |
 
 The inpainting and depth checkpoints derive from 2.0-base at 512x512, not from 2.1-v. Write for 512-scale detail and don't promise 2.1-v quality from them.
 

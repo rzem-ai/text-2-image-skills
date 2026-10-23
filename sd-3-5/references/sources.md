@@ -20,7 +20,7 @@ Checked on 2026-10-23. These embedded references are concise, original summaries
 
    Supports: per-encoder `prompt`/`prompt_2`/`prompt_3`, `max_sequence_length` default 256, negatives ignored below guidance 1, dropping T5, Skip Layer Guidance values for Medium, IP-Adapter use, and the img2img and inpaint pipelines (strength default 0.6, white-repaint mask).
 
-5. [Stability AI SD3.5 announcement](https://stability.ai/news-updates/introducing-stable-diffusion-3-5) [S5]
+5. [Stability AI SD3.5 announcement](https://stability.ai/news-updates/introducing-sd-3-5) [S5]
 
    Supports: parameter counts, the about-1MP Large target, the 0.25-2MP Medium range, release dates (22 and 29 October 2024), diversity across seeds and the SD3 Medium context.
 
@@ -32,7 +32,7 @@ Checked on 2026-10-23. These embedded references are concise, original summaries
 
    Supports: Stable Image Ultra and Core descriptions and the list of hosted edit and control services.
 
-8. [Stability SD3.5 prompt guide (archived copy)](https://web.archive.org/web/20260302001715/https://stability.ai/learning-hub/stable-diffusion-3-5-prompt-guide) [S8]
+8. [Stability SD3.5 prompt guide (archived copy)](https://web.archive.org/web/20260302001715/https://stability.ai/learning-hub/sd-3-5-prompt-guide) [S8]
 
    Supports: style, subject and action, composition, lighting and colour, technical terms, quoted short text and negative prompt advice. The live page returned 404 on the check date; the summary is based on the March 2026 archive.
 

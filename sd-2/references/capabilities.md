@@ -4,7 +4,7 @@ Reference check: 2026-10-23. Bracketed evidence labels resolve in [sources.md](s
 
 ## Model identity
 
-The reference here is Stable Diffusion 2.1-v (`stabilityai/stable-diffusion-2-1`, `v2-1_768-ema-pruned.ckpt`): a latent diffusion model with an 865M UNet, a downsampling-factor-8 autoencoder and a frozen OpenCLIP ViT-H/14 text encoder, conditioned on the penultimate text-encoder layer. It was fine-tuned from 2.0-v with a looser NSFW filter. [S1, S9]
+The reference here is Stable Diffusion 2.1-v (`stabilityai/sd-2-1`, `v2-1_768-ema-pruned.ckpt`): a latent diffusion model with an 865M UNet, a downsampling-factor-8 autoencoder and a frozen OpenCLIP ViT-H/14 text encoder, conditioned on the penultimate text-encoder layer. It was fine-tuned from 2.0-v with a looser NSFW filter. [S1, S9]
 
 The official Stable Diffusion 2.x Hugging Face repositories, apart from the x4 upscaler, and the Stability-AI/stablediffusion GitHub repository were no longer publicly available on the check date. Facts below come from archived copies of those pages plus live Diffusers documentation. A user may still hold local weights or a mirror; preserve whatever exact file they name. See [sources.md](sources.md).
 
@@ -12,14 +12,14 @@ The official Stable Diffusion 2.x Hugging Face repositories, apart from the x4 u
 
 | Checkpoint | Native canvas | Objective | Role |
 | --- | --- | --- | --- |
-| 2.1-v (`stable-diffusion-2-1`) | 768x768 | v-prediction | Default text-to-image reference. [S1] |
-| 2.1-base (`stable-diffusion-2-1-base`) | 512x512 | Epsilon (noise) prediction | Fine-tuned from 2.0-base with the looser filter. [S2] |
-| 2.0-v (`stable-diffusion-2`) | 768x768 | v-prediction | Original November 2022 release; stricter dataset filter than 2.1. [S3, S9] |
-| 2.0-base (`stable-diffusion-2-base`) | 512x512 | Epsilon prediction | Parent of 2.0-v and of the inpainting and depth checkpoints. [S4] |
-| Inpainting (`stable-diffusion-2-inpainting`) | 512x512 | Epsilon prediction | Resumed from 2.0-base, not 2.1; takes the masked image as extra conditioning. [S5] |
-| Depth (`stable-diffusion-2-depth`) | 512x512 | Epsilon prediction | Resumed from 2.0-base; conditioned on a MiDaS relative depth estimate. [S6] |
+| 2.1-v (`sd-2-1`) | 768x768 | v-prediction | Default text-to-image reference. [S1] |
+| 2.1-base (`sd-2-1-base`) | 512x512 | Epsilon (noise) prediction | Fine-tuned from 2.0-base with the looser filter. [S2] |
+| 2.0-v (`sd-2`) | 768x768 | v-prediction | Original November 2022 release; stricter dataset filter than 2.1. [S3, S9] |
+| 2.0-base (`sd-2-base`) | 512x512 | Epsilon prediction | Parent of 2.0-v and of the inpainting and depth checkpoints. [S4] |
+| Inpainting (`sd-2-inpainting`) | 512x512 | Epsilon prediction | Resumed from 2.0-base, not 2.1; takes the masked image as extra conditioning. [S5] |
+| Depth (`sd-2-depth`) | 512x512 | Epsilon prediction | Resumed from 2.0-base; conditioned on a MiDaS relative depth estimate. [S6] |
 | x4 upscaler (`stable-diffusion-x4-upscaler`) | Trained on 512x512 crops | v-prediction scheduler config | Text-guided 4x latent upscaler with a `noise_level` input. [S7, S12] |
-| unCLIP (`stable-diffusion-2-1-unclip`, `-unclip-small`) | 768x768 | Based on 2.1-v | Takes a noisy CLIP image embedding plus text, for image variations. H and L variants. [S8, S9] |
+| unCLIP (`sd-2-1-unclip`, `-unclip-small`) | 768x768 | Based on 2.1-v | Takes a noisy CLIP image embedding plus text, for image variations. H and L variants. [S8, S9] |
 
 Community fine-tunes built on 2.x can change vocabulary, resolution and negative-prompt habits. Don't treat them as the base checkpoint.
 
